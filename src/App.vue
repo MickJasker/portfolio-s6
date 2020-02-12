@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
@@ -34,8 +34,8 @@
   --color-neutral-900: var(--color-neutral-hue), 0%, 90%;
   --color-neutral-white: var(--color-neutral-hue), 0%, 100%;
 
-  --color-bg: hsl(--color-neutral-white);
-  --color-text: hsl(--color-neutral-black);
+  --color-bg: hsl(var(--color-neutral-white));
+  --color-text: hsl(var(--color-neutral-black));
 
   --font-heading: 'DM Serif Display', 'Montserrat', sans-serif;
   --font-base: 'Montserrat', sans-serif;
@@ -45,8 +45,8 @@ html {
   font-size: 8px;
   box-sizing: border-box;
   font-family: var(--font-base);
-  color: hsl(var(--color-neutral-050));
-  background: hsl(var(--color-neutral-1000));
+  color: var(--color-text);
+  background: var(--color-bg);
   -webkit-tap-highlight-color: rgba(#000, 0);
 }
 
@@ -56,7 +56,7 @@ body {
 }
 
 ::selection {
-  background: hsl(var(--color-primary-black));
+  background: hsl(var(--color-primary-500));
   color: hsl(var(--color-neutral-white));
 }
 
@@ -94,10 +94,51 @@ img {
   color: hsl(var(--color-primary-500));
 }
 
+h1 {
+  font-size: 5rem;
+  font-family: var(--font-heading);
+  width: fit-content;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 3rem;
+  margin-bottom: .5rem;
+}
+
+.heading-huge {
+  font-size: 12rem;
+  line-height: 1em;
+  margin-bottom: 2rem;
+
+  &:after {
+    content: '.';
+    color: hsl(var(--color-primary-500));
+  }
+}
+
+article {
+  h1 {
+    &:after {
+      content: '';
+      display: block;
+      width: 30%;
+      min-width: 2rem;
+      height: 1rem;
+      background: hsl(var(--color-primary-500));
+    }
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: hsl(--color-neutral-black);
-    --color-text: hsl(--color-neutral-white);
+    --color-bg: hsl(var(--color-neutral-black));
+    --color-text: hsl(var(--color-neutral-white));
   }
 }
 </style>
