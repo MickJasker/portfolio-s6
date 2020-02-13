@@ -97,7 +97,7 @@ export default class StyleGuide extends Vue {
     {
       color: '900',
     },
-  ]
+  ];
 
   public neutral = [
     {

@@ -1,0 +1,21 @@
+import { Meta, Props, Story, Preview } from '@storybook/addon-docs/blocks';
+import { action } from "@storybook/addon-actions";
+import MyButton from '../components/MyButton.vue';
+
+<Meta title="MDX|Button" component={MyButton} />
+
+# Button
+
+<Props of={MyButton} />
+
+This is a simple button with some text in it.
+
+<Preview>
+  <Story name="With Text">
+    {{
+        components: { MyButton },
+        template: '<my-button @click="action">Hello Button</my-button>',
+        methods: { action: action("clicked") }
+    }}
+  </Story>
+</Preview>
