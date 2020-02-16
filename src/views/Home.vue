@@ -14,16 +14,19 @@
       Semester <span class="highlight">6</span><br>
       <span class="highlight">Startup</span> Experience
     </Hero>
+    <HighlightBlock />
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
 import Hero from '@/components/orgranisms/Hero.vue';
+import HighlightBlock from '@/components/orgranisms/HighlightBlock.vue';
 
 @Component({
   components: {
     Hero,
+    HighlightBlock,
   },
 })
 export default class Home extends Vue {}
