@@ -3,7 +3,7 @@
     <main>
       <Subtitle :copy="subtitle" />
       <h1 class="title heading-huge">
-        <slot /><span class="highlight">.</span>
+        <slot /><span class="highlight period">.</span>
       </h1>
       <p
         v-if="copy"
@@ -19,11 +19,9 @@
           v-for="(cta, index) in callToActions"
           :key="`cta-hero-name=${cta.to}-cta-id=${index}`"
         >
-          <router-link :to="cta.to">
-            {{
-              cta.copy
-            }}.
-          </router-link>
+          <UnderlineButton :to="cta.to">
+            {{ cta.copy }}
+          </UnderlineButton>
         </li>
       </ul>
     </main>
@@ -40,6 +38,7 @@
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator';
 import Subtitle from '@/components/molecules/Subtitle.vue';
+import UnderlineButton from '@/components/atoms/UnderlineButton.vue';
 
 interface CallToAction {
   copy: string;
@@ -49,6 +48,7 @@ interface CallToAction {
 @Component({
   components: {
     Subtitle,
+    UnderlineButton,
   },
 })
 export default class Hero extends Vue {
@@ -80,6 +80,10 @@ export default class Hero extends Vue {
       padding: 15rem 2rem;
     }
 
+    .period {
+      margin-left: -20px;
+    }
+
     .copy {
       font-size: 2rem;
       max-width: 60rem;
@@ -97,32 +101,6 @@ export default class Hero extends Vue {
       li {
         width: fit-content;
       }
-
-      a {
-        font-size: 2rem;
-        font-weight: 600;
-        text-decoration: none;
-        color: inherit;
-        position: relative;
-        width: fit-content;
-
-        &:after {
-          position: absolute;
-          content: '';
-          transition: 0.3s ease-out;
-          display: block;
-          bottom: -0.5rem;
-          height: 0.5rem;
-          width: 40%;
-          background: hsl(var(--color-primary-500));
-        }
-
-        &:hover {
-          &:after {
-            width: 100%;
-          }
-        }
-      }
     }
 
     .hero-image {
@@ -138,7 +116,8 @@ export default class Hero extends Vue {
         z-index: 1;
         top: 0;
         height: 100%;
-        position: absolute;//noinspection CssInvalidFunction
+        position: absolute;
+        //noinspection CssInvalidFunction
         background: linear-gradient(rgba(#000, 0), ease-in-out, #fff);
 
         @media (prefers-color-scheme: dark) {
@@ -157,16 +136,19 @@ export default class Hero extends Vue {
     }
 
     @media screen and (min-width: 768px) {
-
       main {
         padding: 30rem 0 30rem 15vw;
         filter: drop-shadow(0 0 2rem hsla(var(--color-bg)));
       }
 
       .hero-image {
+        padding-left: 15vw;
+        width: 100%;
+
         &:before {
           //noinspection CssInvalidFunction
           background: linear-gradient(270deg, rgba(#000, 0), ease-in-out, #fff);
+          width: calc(100% - 15vw);
 
           @media (prefers-color-scheme: dark) {
             //noinspection CssInvalidFunction
