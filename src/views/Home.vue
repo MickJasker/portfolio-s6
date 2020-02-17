@@ -21,9 +21,8 @@
         copy: 'Lees meer over dit semester'
       }"
       :media-block="{
-        type: 'image',
-        src: 'https://images.unsplash.com/photo-1569903415032-cc92fcb0fc5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3902&q=80',
-        alt: 'highlight',
+        type: 'video',
+        src: 'https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4',
       }"
     >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis auctor lorem.

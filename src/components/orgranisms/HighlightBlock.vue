@@ -20,6 +20,11 @@
         :src="mediaBlock.src"
         :alt="mediaBlock.alt"
       >
+      <VideoPlayer
+        v-else-if="mediaBlock.type === 'video'"
+        class="video-player"
+        :src="mediaBlock.src"
+      />
     </aside>
   </section>
 </template>
@@ -27,6 +32,7 @@
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator';
 import UnderlineButton from '@/components/atoms/UnderlineButton.vue';
+import VideoPlayer from '@/components/molecules/VideoPlayer.vue';
 
 interface CallToAction {
   to: string;
@@ -43,21 +49,10 @@ interface MediaBlock {
   type: MediaType;
 }
 
-interface VideoMediaBlock extends MediaBlock {
-  controls: boolean;
-  overlay: boolean;
-  autoPlay: boolean;
-  type: MediaType.video;
-}
-
-interface ImageMediaBlock extends MediaBlock {
-  alt: string;
-  type: MediaType.image;
-}
-
 @Component({
   components: {
     UnderlineButton,
+    VideoPlayer,
   },
 })
 export default class HighlightBlock extends Vue {
@@ -77,7 +72,7 @@ export default class HighlightBlock extends Vue {
     type: Object,
     required: true,
   })
-  readonly mediaBlock?: ImageMediaBlock | VideoMediaBlock;
+  readonly mediaBlock?: MediaBlock;
 }
 </script>
 
@@ -113,6 +108,11 @@ export default class HighlightBlock extends Vue {
        height: 100%;
        object-fit: cover;
      }
+
+    .video-player {
+      width: 100%;
+      height: 100%;
+    }
    }
 
   @media screen and (min-width: 768px) {
@@ -125,7 +125,7 @@ export default class HighlightBlock extends Vue {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      width: calc(10rem + 100ch);
+      flex-basis: calc(10rem + 100ch);
     }
 
     aside {

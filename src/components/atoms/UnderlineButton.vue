@@ -7,7 +7,7 @@
       class="underline-button"
       :class="{'light': light}"
     >
-      <slot />
+      <slot /><span class="period">.</span>
     </button>
   </router-link>
   <button
@@ -15,7 +15,7 @@
     class="underline-button"
     :class="{'light': light}"
   >
-    <slot />
+    <slot /><span class="period">.</span>
   </button>
 </template>
 
@@ -51,6 +51,11 @@ a {
   border: none;
   cursor: pointer;
   background: transparent;
+
+  .period {
+    margin-left: -4px;
+    display: inline-block;
+  }
 
   &:after {
     position: absolute;

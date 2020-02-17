@@ -3,7 +3,7 @@
     <main>
       <Subtitle :copy="subtitle" />
       <h1 class="title heading-huge">
-        <slot /><span class="highlight">.</span>
+        <slot /><span class="highlight period">.</span>
       </h1>
       <p
         v-if="copy"
@@ -78,6 +78,10 @@ export default class Hero extends Vue {
 
     main {
       padding: 15rem 2rem;
+    }
+
+    .period {
+      margin-left: -20px;
     }
 
     .copy {
