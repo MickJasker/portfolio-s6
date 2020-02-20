@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
-    <h1>Mick Jasker<sup /> ⁄ 2016 – {{ new Date().getFullYear() }}</h1>
-    <h2>Alle rechten voorbehouden</h2>
+    <h1>Mick Jasker</h1>
+    <h2>2016 – {{ new Date().getFullYear() }}</h2>
   </footer>
 </template>
 
@@ -26,6 +26,17 @@
     h2 {
       font-size: 2rem;
       color: hsl(var(--color-neutral-600));
+    }
+
+    @media (prefers-color-scheme: dark) {
+      --color-bg: hsl(var(--color-neutral-black));
+      --color-text: hsl(var(--color-neutral-600));
+
+      border-top: solid 4px hsl(var(--color-neutral-100));
+
+      h2 {
+        color: hsl(var(--color-neutral-400));
+      }
     }
   }
 </style>
