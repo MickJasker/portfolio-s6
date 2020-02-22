@@ -43,7 +43,7 @@ a {
   font-weight: 600;
   text-decoration: none;
   position: relative;
-  width: fit-content;
+  width: max-content;
   font-family: inherit;
   padding: 0;
   color: var(--color-text);
