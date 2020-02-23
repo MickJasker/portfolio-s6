@@ -33,6 +33,7 @@
       ex nec laoreet dignissim, odio enim aliquam mi, vel posuere felis tortor quis
       libero.
     </HighlightBlock>
+    <IntroductionBlock />
   </div>
 </template>
 
@@ -40,11 +41,13 @@
 import { Vue, Component } from 'vue-property-decorator';
 import Hero from '@/components/orgranisms/Hero.vue';
 import HighlightBlock from '@/components/orgranisms/HighlightBlock.vue';
+import IntroductionBlock from '@/components/orgranisms/IntroductionBlock.vue';
 
 @Component({
   components: {
     Hero,
     HighlightBlock,
+    IntroductionBlock,
   },
 })
 export default class Home extends Vue {}
