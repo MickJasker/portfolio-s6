@@ -33,7 +33,19 @@
       ex nec laoreet dignissim, odio enim aliquam mi, vel posuere felis tortor quis
       libero.
     </HighlightBlock>
-    <IntroductionBlock />
+    <IntroductionBlock
+      heading="Ik zal me even voorstellen"
+      :src="require('@/assets/images/profile.jpg')"
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Suspendisse quis auctor lorem.
+      Nullam quis ipsum nec orci porttitor mollis. Ut nec mi eu lacus bibendum fermentum.
+      Integer hendrerit elit quis urna euismod, id tristique mi imperdiet. Ut a turpis
+      sodales, feugiat ipsum ut, pulvinar nisi. Sed non placerat sem. Aliquam elementum
+      ligula nec erat gravida commodo. Donec mattis est turpis. Aliquam condimentum,
+      ex nec laoreet dignissim, odio enim aliquam mi, vel posuere felis tortor quis
+      libero.
+    </IntroductionBlock>
   </div>
 </template>
 

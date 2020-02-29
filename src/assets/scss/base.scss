@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=DM+Serif+Display:400,400i|Montserrat:300,400,400i,600,700&display=swap');
 
 :root {
-  --color-primary-hue: 14;
+  --color-primary-hue: 225;
   --color-primary-050: var(--color-primary-hue), 100%, 5%;
   --color-primary-100: var(--color-primary-hue), 100%, 10%;
   --color-primary-200: var(--color-primary-hue), 100%, 20%;
@@ -49,8 +49,8 @@ body {
 }
 
 ::selection {
-  background: var(--color-text);
-  color: var(--color-bg);
+  background: hsl(var(--color-primary-500));
+  color: hsl(var(--color-neutral-white));
 }
 
 *,
@@ -92,6 +92,7 @@ h1 {
   font-family: var(--font-heading);
   width: fit-content;
   margin-bottom: 1.5rem;
+  line-height: 1em;
 }
 
 h2 {
@@ -117,7 +118,8 @@ article {
       display: block;
       width: 30%;
       min-width: 2rem;
-      height: 1rem;
+      height: .7rem;
+      margin-top: .3rem;
       background: hsl(var(--color-primary-500));
     }
   }

@@ -80,6 +80,7 @@ export default class HighlightBlock extends Vue {
 .highlight-block {
   --color-text: hsl(var(--color-neutral-white));
   color: var(--color-text);
+  box-sizing: content-box;
 
   main {
     padding: 5rem 2rem;
